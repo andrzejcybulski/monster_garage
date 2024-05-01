@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:monster_garage/app/features/home/home_page.dart';
 
 void main() {
