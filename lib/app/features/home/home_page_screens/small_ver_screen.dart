@@ -41,7 +41,7 @@ class SmallVerticalScreen extends StatelessWidget {
                     softWrap: true,
                   )),
               const SizedBox(
-                width: 42.5,
+                width: 55,
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
@@ -56,14 +56,13 @@ class SmallVerticalScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                width: 42.5,
+                width: 30,
               ),
-              IconButton(
-                icon: const Icon(Icons.menu),
-                onPressed: () {},
-              )
             ],
           )),
+      endDrawer: NavigationDrawer(
+        children: [Text('Menu')],
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: ListView(
