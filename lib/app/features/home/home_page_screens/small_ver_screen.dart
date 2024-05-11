@@ -109,6 +109,10 @@ class SmallVerticalScreen extends StatelessWidget {
                   ],
                 ),
               ),
+              Divider(
+                height: 1,
+                color: Colors.transparent,
+              ),
               Container(
                 key: key2,
                 color: Colors.grey,
@@ -116,12 +120,20 @@ class SmallVerticalScreen extends StatelessWidget {
                 width: bodyWidth,
                 child: const Text('Container 2'),
               ),
+              Divider(
+                height: 1,
+                color: Colors.transparent,
+              ),
               Container(
                 key: key3,
                 color: Colors.grey,
                 height: bodyHeight,
                 width: bodyWidth,
                 child: const Text('Container 3'),
+              ),
+              Divider(
+                height: 1,
+                color: Colors.transparent,
               ),
               Container(
                 key: key4,
@@ -179,11 +191,6 @@ class NaviDrawer extends StatelessWidget {
             children: [
               const SizedBox(height: 20),
               TextButton(
-                onFocusChange: (hasFocus) {
-                  if (hasFocus) {
-                    TextButton.styleFrom();
-                  }
-                },
                 onPressed: () {
                   Scrollable.ensureVisible(
                     key1.currentContext!,
