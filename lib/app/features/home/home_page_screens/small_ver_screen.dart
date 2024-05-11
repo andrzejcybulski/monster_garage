@@ -60,9 +60,7 @@ class SmallVerticalScreen extends StatelessWidget {
               ),
             ],
           )),
-      endDrawer: NavigationDrawer(
-        children: [Text('Menu')],
-      ),
+      endDrawer: const EndNaviDrawer(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: ListView(
@@ -95,4 +93,134 @@ class SmallVerticalScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+class EndNaviDrawer extends StatelessWidget {
+  const EndNaviDrawer({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) => NavigationDrawer(
+        backgroundColor: const Color.fromARGB(255, 83, 83, 83),
+        children: [
+          const SizedBox(height: 20),
+          Padding(
+            padding: EdgeInsets.only(right: 20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: Icon(Icons.close, color: Colors.white),
+                )
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              // mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                const SizedBox(height: 20),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'O MNIE',
+                    style:
+                        GoogleFonts.raleway(color: Colors.white, fontSize: 20),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'CENNIK',
+                    style:
+                        GoogleFonts.raleway(color: Colors.white, fontSize: 20),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'USŁUGI',
+                    style:
+                        GoogleFonts.raleway(color: Colors.white, fontSize: 20),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'KONTAKT',
+                    style:
+                        GoogleFonts.raleway(color: Colors.white, fontSize: 20),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(height: 30),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Column(
+                  children: [
+                    Row(
+                      children: [
+                        TextButton(
+                          onPressed: () {},
+                          child: Row(
+                            children: [
+                              Icon(Icons.smartphone,
+                                  color: Colors.white, size: 20),
+                              const SizedBox(
+                                width: 3,
+                              ),
+                              Text(
+                                '514 483 455',
+                                style: GoogleFonts.raleway(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    letterSpacing: 1),
+                              ),
+                            ],
+                          ),
+                        ),
+                        CircleAvatar(
+                          radius: 25,
+                          backgroundImage: AssetImage('images/pobrane.png'),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10.0),
+                  child: SizedBox(
+                      width: 240,
+                      child: RichText(
+                        textAlign: TextAlign.start,
+                        text: TextSpan(
+                          text: 'Darmowy dojazd na terenie całej Warszawy!',
+                          style: GoogleFonts.raleway(
+                            textStyle: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              height: 1,
+                            ),
+                          ),
+                        ),
+                        softWrap: true,
+                      )),
+                ),
+              ],
+            ),
+          ),
+        ],
+      );
 }
