@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class SmallVerticalScreen extends StatelessWidget {
   const SmallVerticalScreen({
@@ -17,29 +19,39 @@ class SmallVerticalScreen extends StatelessWidget {
           backgroundColor: const Color.fromARGB(255, 83, 83, 83),
           title: Row(
             children: [
-              const CircleAvatar(
-                radius: 20,
-                backgroundImage: AssetImage('images/monster_logo.jpg'),
-              ),
-              const SizedBox(
-                width: 3,
-              ),
-              SizedBox(
-                  width: 90,
-                  child: RichText(
-                    textAlign: TextAlign.start,
-                    text: TextSpan(
-                      text: 'MONSTER GARAGE MOBILNY MECHANIK',
-                      style: GoogleFonts.bebasNeue(
-                        textStyle: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                          height: 0.8,
-                        ),
+              GestureDetector(
+                onTap: () => launchUrlString('https://kanonierzy.com'),
+                child: Container(
+                  child: Row(
+                    children: [
+                      const CircleAvatar(
+                        radius: 20,
+                        backgroundImage: AssetImage('images/monster_logo.jpg'),
                       ),
-                    ),
-                    softWrap: true,
-                  )),
+                      const SizedBox(
+                        width: 3,
+                      ),
+                      SizedBox(
+                          width: 90,
+                          child: RichText(
+                            textAlign: TextAlign.start,
+                            text: TextSpan(
+                              text: 'MONSTER GARAGE MOBILNY MECHANIK',
+                              style: GoogleFonts.bebasNeue(
+                                textStyle: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                  height: 0.8,
+                                ),
+                              ),
+                            ),
+                            softWrap: true,
+                          )),
+                    ],
+                  ),
+                ),
+              ),
+
               const SizedBox(
                 width: 55,
               ),
@@ -48,16 +60,22 @@ class SmallVerticalScreen extends StatelessWidget {
                   backgroundColor: Colors.green,
                   minimumSize: const Size(70, 25),
                 ),
-                onPressed: () {},
-                child: Text(
-                  '514 483 455',
-                  style:
-                      GoogleFonts.bebasNeue(fontSize: 15, letterSpacing: 0.2),
+                onPressed: () => launchUrlString('tel://514483455'),
+                child: Row(
+                  children: [
+                    Icon(Icons.smartphone, color: Colors.white, size: 11.5),
+                    SizedBox(width: 3),
+                    Text(
+                      '514 483 455',
+                      style: GoogleFonts.bebasNeue(
+                          fontSize: 14, letterSpacing: 0.2),
+                    ),
+                  ],
                 ),
               ),
-              const SizedBox(
-                width: 30,
-              ),
+              // const SizedBox(
+              //   width: 25,
+              // ),
             ],
           )),
       endDrawer: const EndNaviDrawer(),
@@ -172,7 +190,7 @@ class EndNaviDrawer extends StatelessWidget {
                     Row(
                       children: [
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () => launchUrlString('tel://514483455'),
                           child: Row(
                             children: [
                               Icon(Icons.smartphone,
