@@ -9,7 +9,6 @@ class BigScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
-
     var bodyWidth = MediaQuery.of(context).size.width;
     var bodyHeight = MediaQuery.of(context).size.height -
         (MediaQuery.of(context).padding.top + kToolbarHeight);
@@ -24,13 +23,58 @@ class BigScreen extends StatelessWidget {
         headerSliverBuilder: (context, innerBoxIsScrolled) {
           return <Widget>[
             SliverAppBar(
-              expandedHeight: 100.0,
+              backgroundColor: Color.fromARGB(255, 83, 83, 83),
+              expandedHeight: 150.0,
               flexibleSpace: FlexibleSpaceBar(
-                title: Text('Goa', textScaleFactor: 1),
-                // background: Image.asset(
-                //   'assets/images/beach.png',
-                //   fit: BoxFit.fill,
-                // ),
+                  titlePadding: EdgeInsets.fromLTRB(200, 0, 0, 60),
+                  title: Row(
+                    children: [
+                      Container(
+                        child: Row(
+                          children: [
+                            CircleAvatar(
+                              radius: 29,
+                              backgroundImage:
+                                  AssetImage('images/monster_logo.jpg'),
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            SizedBox(
+                                width: 160,
+                                child: RichText(
+                                  textAlign: TextAlign.start,
+                                  text: TextSpan(
+                                    text: 'MONSTER GARAGE MOBILNY MECHANIK',
+                                    style: GoogleFonts.bebasNeue(
+                                      textStyle: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 20,
+                                        height: 0.8,
+                                      ),
+                                    ),
+                                  ),
+                                  softWrap: true,
+                                )),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 400,
+                      ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: Text('Zadzwoń'),
+                      ),
+                    ],
+                  )
+                  // background: Image.asset(
+                  //   'images/pobrane.png',
+                  //   fit: BoxFit.fill,
+                  // ),
+                  ),
+              bottom: AppBar(
+                backgroundColor: Colors.white,
               ),
               pinned: true,
               snap: true,
