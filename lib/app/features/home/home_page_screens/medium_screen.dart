@@ -22,6 +22,9 @@ class MediumScreen extends StatelessWidget {
     ScrollController controller = ScrollController();
 
     return Scaffold(
+      floatingActionButton: CustomFAB(
+        controller: controller,
+      ),
       extendBodyBehindAppBar: true,
       body: CustomScrollView(
         controller: controller,
@@ -244,6 +247,30 @@ class MediumScreen extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class CustomFAB extends StatefulWidget {
+  const CustomFAB({
+    required this.controller,
+    super.key,
+  });
+
+  final ScrollController controller;
+
+  @override
+  State<CustomFAB> createState() => _CustomFABState();
+}
+
+class _CustomFABState extends State<CustomFAB> {
+  @override
+  Widget build(BuildContext context) {
+    return Visibility(
+      visible: true,
+      child: FloatingActionButton(
+        onPressed: () {},
       ),
     );
   }

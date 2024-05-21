@@ -256,6 +256,7 @@ class BigScreen extends StatelessWidget {
                 duration: const Duration(milliseconds: 500),
                 curve: Curves.ease,
               );
+
               // scrollController.animateTo(
               //   scrollController.position.minScrollExtent,
               //   curve: Curves.easeOut,
