@@ -3,16 +3,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-class MediumScreen extends StatefulWidget {
+class MediumScreen extends StatelessWidget {
   const MediumScreen({
     super.key,
   });
 
-  @override
-  State<MediumScreen> createState() => _MediumScreenState();
-}
-
-class _MediumScreenState extends State<MediumScreen> {
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;

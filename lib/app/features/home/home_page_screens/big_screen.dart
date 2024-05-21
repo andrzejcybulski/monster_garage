@@ -3,16 +3,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-class BigScreen extends StatefulWidget {
+class BigScreen extends StatelessWidget {
   BigScreen({
     super.key,
   });
 
-  @override
-  State<BigScreen> createState() => _BigScreenState();
-}
-
-class _BigScreenState extends State<BigScreen> {
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
