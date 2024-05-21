@@ -57,8 +57,10 @@ class SmallHorizontalScreen extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(
-                width: 450,
+              Expanded(
+                child: const SizedBox(
+                  width: 450,
+                ),
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
@@ -78,16 +80,19 @@ class SmallHorizontalScreen extends StatelessWidget {
                   ],
                 ),
               ),
+
               // const SizedBox(
               //   width: 25,
               // ),
             ],
           )),
-      endDrawer: NaviDrawer(
-        key1: key1,
-        key2: key2,
-        key3: key3,
-        key4: key4,
+      endDrawer: Expanded(
+        child: NaviDrawer(
+          key1: key1,
+          key2: key2,
+          key3: key3,
+          key4: key4,
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -308,6 +313,7 @@ class NaviDrawer extends StatelessWidget {
                       softWrap: true,
                     )),
               ),
+              SizedBox(height: 30),
             ],
           ),
         ),

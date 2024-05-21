@@ -31,7 +31,7 @@ class HomePage extends StatelessWidget {
       if (constraints.maxWidth > 960 && constraints.maxWidth < 1420) {
         return const MediumScreen();
       } else {
-        return const BigScreen();
+        return BigScreen();
       }
     });
   }
