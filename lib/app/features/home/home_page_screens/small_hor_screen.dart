@@ -18,138 +18,144 @@ class SmallHorizontalScreen extends StatelessWidget {
     var key2 = GlobalKey();
     var key3 = GlobalKey();
     var key4 = GlobalKey();
+    var key5 = GlobalKey();
 
     return Scaffold(
-      appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 83, 83, 83),
-          title: Row(
-            children: [
-              GestureDetector(
-                onTap: () => launchUrlString('https://kanonierzy.com'),
-                child: Container(
-                  child: Row(
-                    children: [
-                      const CircleAvatar(
-                        radius: 20,
-                        backgroundImage: AssetImage('images/monster_logo.jpg'),
-                      ),
-                      const SizedBox(
-                        width: 3,
-                      ),
-                      SizedBox(
-                          width: 90,
-                          child: RichText(
-                            textAlign: TextAlign.start,
-                            text: TextSpan(
-                              text: 'MONSTER GARAGE MOBILNY MECHANIK',
-                              style: GoogleFonts.bebasNeue(
-                                textStyle: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                  height: 0.8,
+      endDrawer: NaviDrawer(
+        key1: key1,
+        key2: key2,
+        key3: key3,
+        key4: key4,
+      ),
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+              key: key5,
+              pinned: false,
+              floating: true,
+              snap: true,
+              backgroundColor: const Color.fromARGB(255, 83, 83, 83),
+              title: Row(
+                children: [
+                  Container(
+                    child: Row(
+                      children: [
+                        const CircleAvatar(
+                          radius: 18,
+                          backgroundImage:
+                              AssetImage('images/monster_logo.jpg'),
+                        ),
+                        const SizedBox(
+                          width: 5,
+                        ),
+                        SizedBox(
+                            width: 130,
+                            child: RichText(
+                              textAlign: TextAlign.start,
+                              text: TextSpan(
+                                text: 'MONSTER GARAGE MOBILNY MECHANIK',
+                                style: GoogleFonts.bebasNeue(
+                                  textStyle: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    height: 0.8,
+                                  ),
                                 ),
                               ),
-                            ),
-                            softWrap: true,
-                          )),
-                    ],
+                              softWrap: true,
+                            )),
+                      ],
+                    ),
                   ),
-                ),
-              ),
-
-              Expanded(
-                child: const SizedBox(
-                  width: 450,
-                ),
-              ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
-                  minimumSize: const Size(70, 25),
-                ),
-                onPressed: () => launchUrlString('tel://514483455'),
-                child: Row(
+                  const Expanded(
+                    child: SizedBox(),
+                  ),
+                  TextButton(
+                    style: TextButton.styleFrom(
+                        // backgroundColor: Colors.green,
+                        // minimumSize: const Size(70, 35),
+                        ),
+                    onPressed: () => launchUrlString('tel://514483455'),
+                    child: Row(
+                      children: [
+                        const Icon(Icons.smartphone,
+                            color: Colors.yellow, size: 17),
+                        const SizedBox(width: 3),
+                        Text(
+                          '514 483 455',
+                          style: GoogleFonts.firaSans(
+                              fontSize: 18,
+                              letterSpacing: 0.2,
+                              color: Colors.yellow),
+                        ),
+                      ],
+                    ),
+                  ),
+                  // const Expanded(
+                  //   child: SizedBox(),
+                  // ),
+                ],
+              )),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: SingleChildScrollView(
+                child: Column(
                   children: [
-                    Icon(Icons.smartphone, color: Colors.white, size: 11.5),
-                    SizedBox(width: 3),
-                    Text(
-                      '514 483 455',
-                      style: GoogleFonts.bebasNeue(
-                          fontSize: 14, letterSpacing: 0.2),
+                    Container(
+                      key: key1,
+                      color: Colors.grey,
+                      height: bodyHeight,
+                      width: bodyWidth,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Width: ${screenSize.width.toString()}'),
+                          Text('Height: ${screenSize.height.toString()}'),
+                          Text('Body Height: ${bodyHeight.toString()}'),
+                        ],
+                      ),
+                    ),
+                    Divider(
+                      height: 1,
+                      color: Colors.transparent,
+                    ),
+                    Container(
+                      key: key2,
+                      color: Colors.grey,
+                      height: bodyHeight,
+                      width: bodyWidth,
+                      child: const Text('Container 2'),
+                    ),
+                    Divider(
+                      height: 1,
+                      color: Colors.transparent,
+                    ),
+                    Container(
+                      key: key3,
+                      color: Colors.grey,
+                      height: bodyHeight,
+                      width: bodyWidth,
+                      child: const Text('Container 3'),
+                    ),
+                    Divider(
+                      height: 1,
+                      color: Colors.transparent,
+                    ),
+                    Container(
+                      key: key4,
+                      color: Colors.grey,
+                      height: bodyHeight,
+                      width: bodyWidth,
+                      child: const Text('Container 4'),
                     ),
                   ],
                 ),
               ),
-
-              // const SizedBox(
-              //   width: 25,
-              // ),
-            ],
-          )),
-      endDrawer: Expanded(
-        child: NaviDrawer(
-          key1: key1,
-          key2: key2,
-          key3: key3,
-          key4: key4,
-        ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Container(
-                key: key1,
-                color: Colors.grey,
-                height: bodyHeight,
-                width: bodyWidth,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Width: ${screenSize.width.toString()}'),
-                    Text('Height: ${screenSize.height.toString()}'),
-                    Text('Body Height: ${bodyHeight.toString()}'),
-                  ],
-                ),
-              ),
-              Divider(
-                height: 1,
-                color: Colors.transparent,
-              ),
-              Container(
-                key: key2,
-                color: Colors.grey,
-                height: bodyHeight,
-                width: bodyWidth,
-                child: const Text('Container 2'),
-              ),
-              Divider(
-                height: 1,
-                color: Colors.transparent,
-              ),
-              Container(
-                key: key3,
-                color: Colors.grey,
-                height: bodyHeight,
-                width: bodyWidth,
-                child: const Text('Container 3'),
-              ),
-              Divider(
-                height: 1,
-                color: Colors.transparent,
-              ),
-              Container(
-                key: key4,
-                color: Colors.grey,
-                height: bodyHeight,
-                width: bodyWidth,
-                child: const Text('Container 4'),
-              ),
-            ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }

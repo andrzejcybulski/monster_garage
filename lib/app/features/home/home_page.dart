@@ -22,14 +22,11 @@ class HomePage extends StatelessWidget {
 
     return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
-      if (constraints.maxWidth < 400) {
+      if (constraints.maxWidth <= 500) {
         return const SmallVerticalScreen();
       }
-      if (constraints.maxWidth > 400 && constraints.maxWidth < 960) {
+      if (constraints.maxWidth > 500 && constraints.maxWidth <= 1000) {
         return const SmallHorizontalScreen();
-      }
-      if (constraints.maxWidth > 960 && constraints.maxWidth < 1420) {
-        return const MediumScreen();
       } else {
         return BigScreen();
       }
