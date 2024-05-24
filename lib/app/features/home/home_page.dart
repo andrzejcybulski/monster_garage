@@ -27,6 +27,9 @@ class HomePage extends StatelessWidget {
       }
       if (constraints.maxWidth > 500 && constraints.maxWidth <= 1000) {
         return const SmallHorizontalScreen();
+      }
+      if (constraints.maxWidth > 1000 && constraints.maxWidth <= 1250) {
+        return const MediumScreen();
       } else {
         return BigScreen();
       }
