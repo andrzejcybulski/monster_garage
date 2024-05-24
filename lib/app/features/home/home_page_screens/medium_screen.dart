@@ -52,6 +52,7 @@ class _MediumScreenState extends State<MediumScreen> {
                   isVisible = false;
                 });
               }
+
               debugPrint('Widoczny? $isVisible');
             },
             key: key5,
