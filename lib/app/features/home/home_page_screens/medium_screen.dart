@@ -283,7 +283,7 @@ class _MediumScreenState extends State<MediumScreen> {
           AnimatedOpacity(
         curve: Curves.slowMiddle,
         opacity: isVisible ? 1.0 : 0.0,
-        duration: const Duration(milliseconds: 0),
+        duration: const Duration(milliseconds: 150),
         child: FloatingActionButton(
           splashColor: Colors.green,
           backgroundColor: Colors.red,
